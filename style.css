@@ -68,6 +68,7 @@ h1 {
   height: 1px;
   background: var(--border);
   width: 100%;
+  max-width: 680px;
   margin: 0;
 }
 
@@ -265,3 +266,4 @@ blockquote {
 .link-row {
   grid-template-columns: 1fr;
 }
+
