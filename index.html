@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Matchstak — A short engineering letter</title>
+    <meta name="description" content="A short personal engineering note about Matchstak." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-inner">
+
+        <div class="logo-wrap">
+          <img src="logo.svg" alt="Matchstak logo" />
+        </div>
+
+        <h1>I built an AI system to solve a problem I kept seeing.</h1>
+        <p class="sub">This is that story.</p>
+
+        <!-- make sure it's a real button -->
+        <button class="btn" id="openLetterBtn" type="button">
+          Open the letter →
+        </button>
+      </div>
+      <div class="container"><div class="rule"></div></div>
+    </section>
+
+    <!-- LETTER (hidden by default) -->
+    <main id="letter" class="container main" style="display:none;">
+      <div class="letter-wrap">
+        <div class="accent"></div>
+
+        <article class="letter">
+          <div class="kicker">A short personal engineering note</div>
+
+          <p class="lead">
+            <span class="dropcap">H</span>i — over the past few years, I kept seeing capable engineers
+            get stuck in the same loop: part-time work to survive, no time to apply,
+            low-signal job boards, and endless scrolling.
+          </p>
+
+          <p>
+            A large part of job searching isn’t applying — it’s deciding
+            <em>where effort is worth spending</em>. I built Matchstak to reduce that
+            burden by improving relevance and explainability.
+          </p>
+
+          <blockquote>
+            “The goal isn’t volume — it’s better signal.”
+          </blockquote>
+
+          <p>
+            Matchstak aggregates jobs from multiple sources, parses résumés with LLMs,
+            generates embeddings for semantic matching, and surfaces the most relevant
+            roles with clear scoring and an explanation layer.
+          </p>
+
+          <p>
+            I intentionally stopped short of auto-apply. Reliability, compliance, and
+            trust matter more than novelty — I wanted to ship something honest and
+            defensible that can evolve.
+          </p>
+
+          <div class="rule"></div>
+        </article>
+      </div>
+
+      <!-- 3 CARDS -->
+      <section class="cards">
+        <div class="card">
+          <h3>How I approached the problem</h3>
+          <ul>
+            <li>Explainability over black-box automation</li>
+            <li>Embeddings over keywords</li>
+            <li>Batch workflows over real-time complexity</li>
+            <li>Cost-aware AI usage (cache + scope control)</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>What I built</h3>
+          <ul>
+            <li>FastAPI backend + SQLAlchemy</li>
+            <li>PostgreSQL-ready schema + embedding cache</li>
+            <li>Job ingestion (Greenhouse, Lever, Remotive, JSearch)</li>
+            <li>Embeddings-based matching + daily email pipeline</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Why I stopped where I did</h3>
+          <p>
+            I avoided auto-apply for now because it introduces ToS and reliability
+            risks. The priority was a clean, explainable matching pipeline that can
+            be extended safely.
+          </p>
+        </div>
+      </section>
+
+      <!-- LINKS -->
+      <section class="links">
+  	<div class="rule"></div>
+
+  	<div class="link-row" id="ctaRow">
+    	  <button class="linkbtn" id="openTechDocBtn" type="button">
+    	    <span>📄 Technical documentation</span>
+            <span class="arrow">→</span>
+          </button>
+    	  <button class="linkbtn" id="openDemoBtn" type="button">
+            <span>🎥 Watch the 90-second demo</span>
+  	    <span class="arrow">→</span>
+          </button>
+    	  <button class="linkbtn" id="openEngineerBtn">
+            <span>🧩 How I think as an engineer</span>
+	    <span class="arrow">→</span>
+          </button>
+        </div>
+
+        <p class="note" </p>
+      </section>
+
+      <section id="tech-doc-preview" class="container main" style="display:none;">
+        <div class="letter-wrap">
+          <div class="accent"></div>
+
+          <article class="letter">
+            <div class="kicker">Technical overview</div>
+
+            <p class="lead">
+              Matchstak is an end-to-end AI-driven career intelligence system designed to
+              reduce the highest-friction part of job searching: deciding
+              <em>where effort is worth spending</em>.
+            </p>
+
+            <p>
+              Over the past few years, the U.S. tech job market—especially for international
+              candidates—has become increasingly inefficient. Many capable engineers rely
+              on part-time work to survive, leaving little time to manually sift through
+              hundreds of low-signal job postings.
+            </p>
+
+            <p>
+              Matchstak addresses this by aggregating jobs from multiple sources and ranking
+              them using semantic similarity rather than keyword matching. Résumés and job
+              descriptions are embedded into a shared vector space, allowing the system to
+              surface meaningfully aligned roles even when terminology differs.
+            </p>
+
+            <p>
+              The system prioritizes explainability and relevance over volume. Instead of
+              sending more jobs, Matchstak focuses on sending better ones—along with clear
+              signals about why a role matches and where gaps exist.
+            </p>
+
+            <div class="rule"></div>
+
+            <p>
+              This section is a high-level summary. The full documentation includes detailed
+              discussion of:
+            </p>
+
+            <ul>
+              <li>System architecture and data flow</li>
+              <li>Job ingestion and normalization</li>
+              <li>Embedding-based matching strategy</li>
+              <li>Database schema and caching design</li>
+              <li>Tradeoffs, limitations, and future extensions</li>
+            </ul>
+
+            <a
+              class="linkbtn"
+              href="MATCHSTAK — Project Documentation.pdf"
+              target="_blank"
+              rel="noreferrer"
+              style="margin-top:16px;"
+            >
+              <span>📄 Read the full technical documentation (PDF)</span>
+              <span class="arrow">→</span>
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <section id="demo-panel" class="container main" style="display:none;">
+        <div class="letter-wrap">
+          <div class="accent"></div>
+
+          <article class="letter">
+            <div class="kicker">Demo</div>
+
+            <p class="lead">
+              A quick walkthrough of Matchstak: job ingestion → matching → daily delivery.
+            </p>
+
+            <div class="video-wrap">
+              <iframe
+                id="demo-iframe"
+                src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE"
+                title="Matchstak — 90 second demo"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+            </div>
+
+            <p class="note" style="margin-top: 12px;">
+              Tip: if the video doesn’t load on your network, open it on YouTube directly.
+            </p>
+
+            <a class="linkbtn" href="https://www.youtube.com/watch?v=demo" target="_blank" rel="noreferrer" style="margin-top: 14px;">
+              <span>Open on YouTube</span><span class="arrow">→</span>
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <!-- HOW I THINK AS AN ENGINEER (hidden by default) -->
+      <section id="engineer-thoughts" class="engineer-section" style="display:none;">
+        <div class="rule"></div>
+
+        <article class="engineer-article">
+          <h2>How I think as an engineer</h2>
+
+          <h3>Philosophy</h3>
+          <p>
+            I approach engineering as a process of progressive clarity rather than upfront perfection.
+            When faced with a complex problem, I don’t try to design the final system immediately.
+            Instead, I identify the hard parts early, validate assumptions quickly, and build systems
+            that can evolve without collapsing under their own complexity.
+          </p>
+
+          <h3>Start with the real problem, not the tech</h3>
+          <p>
+            I don’t start projects because a new technology is interesting — I start because a problem
+            is painful. Matchstak exists because I repeatedly saw capable people wasting hours scrolling
+            job boards without knowing where effort was worth spending.
+          </p>
+
+          <h3>Prefer simple, composable systems</h3>
+          <p>
+            Easy to reason about, debug and change. That’s why Matchstak uses:
+            <ul>
+              <li>Embeddings + cosine similarity instead of trained models</li>
+              <li>Batch processing over real-time pipelines</li>
+              <li>Relational storage with JSON fields instead of premature vector databases</li>
+            </ul>
+	  </p>
+         <h3>Use AI where it adds leverage, not risk</h3>
+         <p>
+           LLMs are used for parsing, explanation, and synthesis — not for core ranking logic,
+           automated actions, or decisions requiring strict correctness.
+         </p>
+
+         
+
+         <h3>Embrace constraints early</h3>
+         <ul>
+           <li>Limited budget → aggressive caching</li>
+           <li>No labeled data → unsupervised similarity</li>
+           <li>Solo developer → simpler architectures</li>
+           <li>ToS boundaries → assistance over automation</li>
+         </ul>
+
+         <h3>Ownership over titles</h3>
+         <p>
+           I designed the data model, built ingestion pipelines, implemented matching and caching,
+           handled authentication, integrated the frontend, and prepared the system for deployment.
+           End-to-end ownership is how I learn fastest.
+         </p>
+
+         <h3>How this translates to a team</h3>
+         <ul>
+           <li>I ask “why” before “how”</li>
+           <li>I’m comfortable with ambiguity</li>
+           <li>I document tradeoffs</li>
+           <li>I build for maintainability</li>
+           <li>I don’t chase hype</li>
+         </ul>
+       </article>
+     </section>
+   </main>
+
+  <script>
+  function setActiveButton(activeBtn) {
+    document.querySelectorAll(".linkbtn").forEach((btn) => {
+      btn.classList.remove("active");
+    });
+    if (activeBtn) activeBtn.classList.add("active");
+  }
+
+  function hideAllPanels() {
+    const panels = [
+      document.getElementById("tech-doc-preview"),
+      document.getElementById("engineer-thoughts"),
+      document.getElementById("demo-panel"),
+    ];
+
+    panels.forEach((panel) => {
+      if (panel) panel.style.display = "none";
+    });
+  }
+
+  window.addEventListener("DOMContentLoaded", () => {
+    // Letter
+    const btn = document.getElementById("openLetterBtn");
+    const letter = document.getElementById("letter");
+
+    if (btn && letter) {
+      btn.addEventListener("click", () => {
+        letter.style.display = "";      // show
+        letter.classList.add("reveal"); // animate
+        letter.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        btn.style.display = "none";
+      });
+    }
+
+    // Engineer thoughts
+    const engineerBtn = document.getElementById("openEngineerBtn");
+    const engineerSection = document.getElementById("engineer-thoughts");
+
+    if (engineerBtn && engineerSection) {
+      engineerBtn.addEventListener("click", () => {
+        hideAllPanels();
+
+        const ctaRow = document.getElementById("ctaRow");
+
+        engineerSection.style.display = "";
+        engineerSection.classList.add("reveal");
+
+        setActiveButton(engineerBtn);
+
+        const offset = (ctaRow?.offsetHeight || 0) + 24;
+        const y =
+          engineerSection.getBoundingClientRect().top +
+          window.pageYOffset -
+          offset;
+
+        window.scrollTo({ top: y, behavior: "smooth" });
+      });
+    }
+
+    // Tech doc preview
+    const techBtn = document.getElementById("openTechDocBtn");
+    const techSection = document.getElementById("tech-doc-preview");
+
+    if (techBtn && techSection) {
+      techBtn.addEventListener("click", () => {
+        hideAllPanels();
+
+        const ctaRow = document.getElementById("ctaRow");
+
+        techSection.style.display = "";
+        techSection.classList.add("reveal");
+
+        setActiveButton(techBtn);
+
+        const offset = (ctaRow?.offsetHeight || 0) + 24;
+        const y =
+          techSection.getBoundingClientRect().top +
+          window.pageYOffset -
+          offset;
+
+        window.scrollTo({ top: y, behavior: "smooth" });
+      });
+    }
+
+    //90sec demo
+    const demoBtn = document.getElementById("openDemoBtn");
+    const demoPanel = document.getElementById("demo-panel");
+
+    if (demoBtn && demoPanel) {
+      demoBtn.addEventListener("click", () => {
+        hideAllPanels();
+
+        const ctaRow = document.getElementById("ctaRow");
+
+        demoPanel.style.display = "";
+        demoPanel.classList.add("reveal");
+
+        setActiveButton(demoBtn);
+
+        const offset = (ctaRow?.offsetHeight || 0) + 24;
+        const y =
+          demoPanel.getBoundingClientRect().top +
+          window.pageYOffset -
+          offset;
+
+        window.scrollTo({ top: y, behavior: "smooth" });
+      });
+    }
+
+  });
+</script>
+
+
+  </body>
+</html>
